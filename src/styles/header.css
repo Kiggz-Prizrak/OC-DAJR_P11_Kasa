@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .headerContainer img {

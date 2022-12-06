@@ -3,11 +3,6 @@ import Card from "../components/Card";
 
 import React, { useState, useEffect } from "react";
 
-
-  //.then((res) => setLogements(res));
-
-
-
 export default function Home() {
 
   const [logements, setLogements] = useState([]);

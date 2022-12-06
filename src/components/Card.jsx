@@ -2,6 +2,9 @@ import "../styles/card.css";
 import { Link } from "react-router-dom";
 
 export default function Card({ data }) {
+
+
+  
   const img = data.cover;
 
   return (
