@@ -1,26 +1,45 @@
-import "../styles/slideshow.css"
+import "../styles/slideshow.css";
 
 import React, { useState, useEffect } from "react";
 
-
 export default function Slideshow(photos) {
+  const [imageVisible, setImageVisible] = useState("");
 
-  console.log(photos.gallery[0])
+  const [count, setCount] = useState("");
 
-  
-const [imageVisible, setImageVisible] = useState(photos.gallery[0]);
+  useEffect(() => {
+    if (photos.gallery) {
+      setImageVisible(photos.gallery[0]);
+    }
+  }, [photos.gallery]);
 
+  // useEffect(() => {
+  //   if(count >= photos.gallery.length) {
+  //     setCount(0)
+  //   }  else if(count <= photos.gallery.length) {
+  //     setCount(photos.gallery.length -1)
+  //   }
+  // }, [1]);
 
+  console.log(imageVisible);
   return (
     <div className="slideshowContainer">
-      <button>
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <img src={imageVisible} alt="" />
-      <span>1/</span>
-      <button>
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
+      <div className="slideSelected">
+        <button className="leftChevron" 
+        onClick={() => setCount(count - 1)}
+        >
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
+        <img src={imageVisible} alt="" />
+        <button className="rightChevron" 
+        onClick={() => setCount(count + 1)}
+        >
+          <i className="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <span className="imgSelected">
+        <p>{count} / </p>
+      </span>
     </div>
   );
 }

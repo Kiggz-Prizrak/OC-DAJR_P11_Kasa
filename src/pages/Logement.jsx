@@ -25,10 +25,12 @@ export default function Logement(logementData) {
     fetchDate();
   }, []);
 
- // console.log(logement)
+ //console.log(logement)
   
   return (
+     
     <div className="logementContainer">
+      
       <Slideshow gallery={logement.pictures} />
       <div>
         <div>

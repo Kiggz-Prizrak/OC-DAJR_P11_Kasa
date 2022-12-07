@@ -14,7 +14,7 @@ export default function Home() {
         setLogements(json)
       }
       fetchDate()
-    }, []);
+    }, [logements]);
 
   return (
     <div className="homeContainer">
