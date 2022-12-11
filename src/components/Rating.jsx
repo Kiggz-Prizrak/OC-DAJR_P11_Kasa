@@ -4,47 +4,38 @@ import "../styles/rating.css";
 export default function rating(props) {
   //console.log(props.rating)
 
-  
-
   const [starList, setStarList] = useState([
-    { id: 1, style: "emptyStar" },
-    { id: 2, style: "emptyStar" },
-    { id: 3, style: "emptyStar" },
-    { id: 4, style: "emptyStar" },
-    { id: 5, style: "emptyStar" },
+    { id: 1, style: false },
+    { id: 2, style: false },
+    { id: 3, style: false },
+    { id: 4, style: false },
+    { id: 5, style: false },
   ]);
 
   useEffect(() => {
-    const newArray = starList;
-    console.log(newArray);
-    newArray.map((e) => {
-      console.log(newArray.indexOf(e));
-      if (newArray.indexOf(e) + 1 <= props.rating) {
-        e.style = "fullStar";
-      }
-    });
-    console.log(newArray);
+    const newArray = starList.map((e) => ({
+      id: e.id,
+      style: starList.indexOf(e) + 1 <= props.rating,
+    }));
     setStarList(newArray);
   }, [props.rating]);
 
   return (
-    <div className="ratingContainer">
-      <ul className="cardContainer">
-        {starList.map((star) => {
-          if(star.style == "emptyStar") {
-            return (
-              <li key={star.id}>
-                <i className="fa-regular fa-star"></i>
-              </li>
-            );
-          }
+    <ul className="ratingContainer">
+      {starList.map((star) => {
+        if (!star.style) {
           return (
-            <li key={star.id}>
+            <li style={{ color: "#E3E3E3" }} key={star.id}>
               <i className="fa-solid fa-star"></i>
             </li>
           );
-        })}
-      </ul>
-    </div>
+        }
+        return (
+          <li style={{ color: "#FF6060" }} key={star.id}>
+            <i className="fa-solid fa-star"></i>
+          </li>
+        );
+      })}
+    </ul>
   );
 }

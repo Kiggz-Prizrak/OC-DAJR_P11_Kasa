@@ -2,15 +2,16 @@ import "../styles/dropdown.css";
 
 import React, { useState, useEffect } from "react";
 
-export default function Dropdown(title, content) {
+export default function Dropdown(props) {
  //console.log({ title });
 
   const [isOpen, setIsOpen] = useState(false);
+  console.log(typeof(props.content))
 
   return (
     <div className="dropdownContainer">
       <div className="dropdownHeader">
-        <h3>{title.title}</h3>
+        <h3>{props.title}</h3>
         <button
           style={
             isOpen
@@ -24,11 +25,17 @@ export default function Dropdown(title, content) {
       </div>
       {isOpen && (
         <div className="dropdownContent">
-          <p>
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
-          </p>
+          {typeof props.content == "string" ? (
+            <p>{props.content}</p>
+          ) : (
+            <ul>
+              {props.content.map((prop) => (
+                <li>{prop}</li>
+              ))}
+            </ul>
+          )}
+
+          <p></p>
         </div>
       )}
     </div>

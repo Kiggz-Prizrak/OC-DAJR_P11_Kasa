@@ -13,35 +13,35 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Root = () => {
- return( 
- <>
-    <Header />
-    <Outlet />
-  </>
-  )
+  return (
+    <div className="container">
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  );
 };
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <Home />,
-        errorElement: <ErrorPage />,
       },
       {
         path: "/logement/:id",
         element: <Logement />,
-        errorElement: <ErrorPage />,
       },
       {
         path: "/about",
         element: <About />,
-        errorElement: <ErrorPage />,
       },
     ],
   },

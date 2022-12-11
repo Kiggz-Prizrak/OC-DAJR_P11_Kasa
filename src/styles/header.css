@@ -9,7 +9,7 @@
 }
 
 .headerContainer img {
-  width: 218px;
+  max-width: 200px;
 }
 .headerContainer nav {
   display: flex;

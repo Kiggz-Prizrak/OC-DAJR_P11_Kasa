@@ -24,6 +24,8 @@
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
+  height: 100%;
+  width: 100%;
   line-height: 142.6%;
 }
 .rightChevron {
@@ -42,4 +44,7 @@
 .slideshowContainer img {
   max-width: 1240px;
   max-height: 415px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
