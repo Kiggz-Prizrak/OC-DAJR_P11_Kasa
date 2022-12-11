@@ -1,8 +1,10 @@
 .card {
   display: flex;
   position: relative;
-  width: 340px;
-  height: 340px;
+  max-width: 340px;
+  min-width: 335px;
+  max-height: 340px;
+  min-height: 255px;
   margin: 15px;
   border-radius: 10px;
   margin: 25px;
@@ -53,3 +55,6 @@
   color: #ffffff;
   padding: 15px;
 }
+
+/* 1170px */
+

@@ -34,7 +34,9 @@ export default function Slideshow({ gallery }) {
         </button>
       </div>
       <span className="imgSelected">
-        <p>{count} / </p>
+        <p>
+          {count}/{gallery?.length}{" "}
+        </p>
       </span>
     </div>
   );

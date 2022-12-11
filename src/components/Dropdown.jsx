@@ -35,7 +35,6 @@ export default function Dropdown(props) {
             </ul>
           )}
 
-          <p></p>
         </div>
       )}
     </div>
