@@ -15,6 +15,7 @@ export default function Home() {
     fetchDate();
   }, [logements]);
 
+
   return (
     <div className="homeContainer">
       <div className="homeTitle">

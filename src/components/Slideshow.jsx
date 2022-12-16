@@ -20,8 +20,6 @@ export default function Slideshow({ gallery }) {
       setCount(gallery.length);
     }
   }, [count]);
-
-  console.log(imageVisible);
   return (
     <div className="slideshowContainer">
       <div className="slideSelected">

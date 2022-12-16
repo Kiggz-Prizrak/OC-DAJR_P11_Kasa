@@ -6,7 +6,6 @@ export default function Dropdown(props) {
  //console.log({ title });
 
   const [isOpen, setIsOpen] = useState(false);
-  console.log(typeof(props.content))
 
   return (
     <div className="dropdownContainer">

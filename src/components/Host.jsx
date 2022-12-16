@@ -9,8 +9,6 @@ useEffect(() => {
      setData(props.host);
    }
 }, [props.host])
-
-  console.log(props.host)
   return (
     <div className="hostContainer">
       <h3>{data.name}</h3>

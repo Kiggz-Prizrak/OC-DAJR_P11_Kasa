@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 export default function Card({ data }) {
 
 
-  
-  const img = data.cover;
-
   return (
     <li key={data.id} className="card">
       <Link to={`logement/${data.id}`}>
