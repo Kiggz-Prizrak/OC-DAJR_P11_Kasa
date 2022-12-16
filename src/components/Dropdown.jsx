@@ -29,7 +29,7 @@ export default function Dropdown(props) {
           ) : (
             <ul>
               {props.content.map((prop) => (
-                <li>{prop}</li>
+                <li key={prop}>{prop}</li>
               ))}
             </ul>
           )}
